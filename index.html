@@ -1,42 +1,164 @@
 <!doctype html>
 <html lang="km">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Get UDID - ទាញយក UDID iPhone / iPad</title>
-<style>
-  *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,"Khmer OS",system-ui,sans-serif;background:linear-gradient(160deg,#eef3ff,#f7f0ff);color:#1c1e21;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
-  .card{background:#fff;max-width:460px;width:100%;border-radius:24px;padding:32px 24px;box-shadow:0 10px 40px rgba(60,60,120,.12)}
-  h1{font-size:26px;margin:0 0 8px;text-align:center}
-  .sub{color:#5f6672;text-align:center;margin:0 0 24px;font-size:15px;line-height:1.6}
-  .btn{display:block;width:100%;padding:16px;border:0;border-radius:14px;background:#0a84ff;color:#fff;font-size:17px;font-weight:600;text-align:center;text-decoration:none}
-  .btn:active{opacity:.8}
-  ol{padding-left:20px;color:#3a3f47;line-height:1.9;font-size:15px;margin:24px 0 0}
-  .warn{display:none;background:#fff4e5;border-radius:12px;padding:12px 14px;color:#8a5200;font-size:14px;margin-bottom:16px;line-height:1.6}
-  .note{margin-top:22px;font-size:13px;color:#7b828d;line-height:1.6;text-align:center}
-</style>
-</head>
-<body>
-<div class="card">
-  <h1>📱 Get UDID</h1>
-  <p class="sub">ទាញយក UDID របស់ iPhone / iPad របស់អ្នកបានយ៉ាងងាយ ក្នុងរយៈពេលតែប៉ុន្មានវិនាទី</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Get UDID - ទាញយក UDID iPhone / iPad</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, "Khmer OS", system-ui, sans-serif;
+        background: linear-gradient(160deg, #eef3ff, #f7f0ff);
+        color: #1c1e21;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+      }
+      .card {
+        background: #fff;
+        max-width: 460px;
+        width: 100%;
+        border-radius: 24px;
+        padding: 32px 24px;
+        box-shadow: 0 10px 40px rgba(60, 60, 120, 0.12);
+      }
+      h1 {
+        font-size: 26px;
+        margin: 0 0 8px;
+        text-align: center;
+      }
+      .sub {
+        color: #5f6672;
+        text-align: center;
+        margin: 0 0 24px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        border: 0;
+        border-radius: 14px;
+        background: #0a84ff;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+      }
+      .btn:active {
+        opacity: 0.8;
+      }
+      ol {
+        padding-left: 20px;
+        color: #3a3f47;
+        line-height: 1.9;
+        font-size: 15px;
+        margin: 24px 0 0;
+      }
+      .warn {
+        display: none;
+        background: #fff4e5;
+        border-radius: 12px;
+        padding: 12px 14px;
+        color: #8a5200;
+        font-size: 14px;
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+      .note {
+        margin-top: 22px;
+        font-size: 13px;
+        color: #7b828d;
+        line-height: 1.6;
+        text-align: center;
+      }
+      .tg-bar {
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid #eef0f4;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+      .tg-btn {
+        flex: 1;
+        padding: 9px 12px;
+        border-radius: 10px;
+        background: #f4f7fb;
+        color: #2c3e50;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid #e3e8f0;
+        transition: background 0.15s;
+      }
+      .tg-btn:hover {
+        background: #e9f1fc;
+        color: #0a84ff;
+        border-color: #c6dcf9;
+      }
+      .tg-btn:active {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>📱 Get UDID</h1>
+      <p class="sub">
+        ទាញយក UDID របស់ iPhone / iPad របស់អ្នកបានយ៉ាងងាយ
+        ក្នុងរយៈពេលតែប៉ុន្មានវិនាទី
+      </p>
 
-  <div class="warn" id="warn">⚠️ សូមបើកគេហទំព័រនេះក្នុង <b>Safari</b> នៅលើ iPhone / iPad របស់អ្នក។</div>
+      <div class="warn" id="warn">
+        ⚠️ សូមបើកគេហទំព័រនេះក្នុង <b>Safari</b> នៅលើ iPhone / iPad របស់អ្នក។
+      </div>
 
-  <a class="btn" href="/profile.mobileconfig">ទាញយក UDID</a>
+      <a class="btn" href="/profile.mobileconfig">ទាញយក UDID</a>
 
-  <ol>
-    <li>ចុចប៊ូតុងខាងលើ ហើយអនុញ្ញាត <b>Allow</b></li>
-    <li>បើក <b>Settings</b> → ចុច <b>Profile Downloaded</b> (ឬ General → VPN &amp; Device Management)</li>
-    <li>ចុច <b>Install</b> ហើយបញ្ចូលលេខសម្ងាត់ទូរស័ព្ទ</li>
-    <li>ប្រព័ន្ធនឹងបើកទំព័រ UDID របស់អ្នកដោយស្វ័យប្រវត្តិ</li>
-  </ol>
+      <ol>
+        <li>ចុចប៊ូតុងខាងលើ ហើយអនុញ្ញាត <b>Allow</b></li>
+        <li>
+          បើក <b>Settings</b> → ចុច <b>Profile Downloaded</b> (ឬ General → VPN
+          &amp; Device Management)
+        </li>
+        <li>ចុច <b>Install</b> ហើយបញ្ចូលលេខសម្ងាត់ទូរស័ព្ទ</li>
+        <li>ប្រព័ន្ធនឹងបើកទំព័រ UDID របស់អ្នកដោយស្វ័យប្រវត្តិ</li>
+      </ol>
 
-  <p class="note">🔒 Profile នេះអានតែ UDID ប៉ុណ្ណោះ ហើយអ្នកអាចលុបវាចេញពី Settings បានគ្រប់ពេល។</p>
-</div>
-<script>
-  if (!/iPhone|iPad|iPod/.test(navigator.userAgent)) document.getElementById('warn').style.display = 'block';
-</script>
-</body>
+      <p class="note">
+        🔒 Profile នេះអានតែ UDID ប៉ុណ្ណោះ ហើយអ្នកអាចលុបវាចេញពី Settings
+        បានគ្រប់ពេល។
+      </p>
+
+      <div class="tg-bar">
+        <a
+          class="tg-btn"
+          href="https://t.me/channelchinchek12"
+          target="_blank"
+          rel="noopener"
+          >📢 Join Channel</a
+        >
+        <a
+          class="tg-btn"
+          href="https://t.me/chinchek55"
+          target="_blank"
+          rel="noopener"
+          >💬 Admin Support</a
+        >
+      </div>
+    </div>
+    <script>
+      if (!/iPhone|iPad|iPod/.test(navigator.userAgent))
+        document.getElementById("warn").style.display = "block";
+    </script>
+  </body>
 </html>
