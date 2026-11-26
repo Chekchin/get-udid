@@ -1,0 +1,13 @@
+{
+  "name": "udid-finder",
+  "version": "1.0.0",
+  "description": "Website for iOS users to get their device UDID via a Profile Service mobileconfig",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT"
+}
